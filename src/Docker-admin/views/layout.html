@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html>
+  	<head>
+    	<title>{{.title}}</title>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+		<style type="text/css">
+			body {
+				margin: 0px;
+				font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+				font-size: 14px;
+				line-height: 20px;
+				color: rgb(51, 51, 51);
+				background-color: rgb(255, 255, 255);
+				padding:0;
+			}
+			
+			div {padding:0;margin:0;}
+
+			.hero-unit {
+				padding: 60px;
+				margin-bottom: 30px;
+				border-radius: 6px 6px 6px 6px;
+			}
+			
+			.hero-text {
+				overflow: hidden;
+				zoom: 1;
+			}
+			
+			.top {
+				position: fixed;
+				left: 0;
+				top: 0;
+				z-index: 20;
+				width: 100%;
+				height: 45px;
+				background: #0666c5;
+				background-color: #f5f5f5;
+			}
+			
+			.top-line {
+				width: 1080px;
+				margin-right: auto;
+				margin-left: auto;
+			}
+
+			.container {
+				width: 980px;
+				margin-right: auto;
+				margin-left: auto;
+			}
+			
+			.header-logo-wordmark {
+				position: relative;
+				float: left;
+				height: 26px;
+				margin-right: 15px;
+				color: #333;
+			}
+			
+			.mega-octicon {
+				height: 26px;
+				font-size: 32px;
+				font: 16px/1 octicons;
+				display: inline-block;
+				text-decoration: none;
+				text-rendering: auto;
+				-moz-user-select: none;
+			}
+			
+			.header-nav {
+				float: left;
+				list-style: outside none none;
+			}
+			
+			.header-nav-link {
+				display: block;
+				padding: 4px 8px;
+				font-size: 13px;
+				font-weight: bold;
+				line-height: 20px;
+				color: #333;
+			}
+			
+			 a:link,a:visited{
+        				text-decoration:none;
+			}
+			
+			.header-nav-item {
+				float: left;
+			}
+
+			.row {
+				margin-left: -20px;
+			}
+
+			h1 {
+				margin: 10px 0px;
+				font-family: inherit;
+				font-weight: bold;
+				text-rendering: optimizelegibility;
+			}
+
+			.hero-unit h1 {
+				margin-bottom: 0px;
+				font-size: 60px;
+				line-height: 1;
+				letter-spacing: -1px;
+				color: inherit;
+			}
+
+			.description {
+				padding-top: 5px;
+				padding-left: 5px;
+				font-size: 18px;
+				font-weight: 200;
+				line-height: 30px;
+				color: inherit;
+			}
+
+			p {
+				margin: 0px 0px 10px;
+			}
+			
+			.left-container {
+				float: left;
+				padding-top: 5px;
+				padding-left: 10px;
+				width: 15%;
+				bottom: 0;
+				border-left: 0 none;
+				height: auto;
+				border:none;
+				border-top:1px solid #555555;
+				background-color: #f5f5f5;
+			}
+			
+			.right-container {
+				float: left;
+				margin: 0;
+				padding-top: 5px;
+				padding-left: 10px;
+				width: 80%;
+				border:non;
+				border-top:1px solid #555555;
+			}
+			
+			table {
+				border-collapse:collapse;
+				border-spacing:0;
+				border-left:1px solid #888;
+				border-top:1px solid #888;
+				background:#efefef;
+			}
+			
+			th,td {
+			border-right:1px solid #888;
+			border-bottom:1px solid #888;
+			padding:5px 15px;
+			}
+			
+			th {
+			font-weight:bold;
+			background:#ccc;
+			}
+		</style>
+	</head>
+
+  	<body>
+  		<header class="hero-unit">
+			<div class="top">
+				<div class="top-line">
+					<ul class="header-nav" role="navigation">
+					<li class="header-nav-item">
+					<a class="header-nav-link" href="/">index</a>
+					</li>
+					<li class="header-nav-item">
+					<a class="header-nav-link" href="/container">containers</a>
+					</li>
+					<li class="header-nav-item">
+					<a class="header-nav-link">add</a>
+					</li>
+					<li class="header-nav-item">
+					<a class="header-nav-link">logout</a>
+					</li>
+
+</ul>
+				</div>
+			</div>
+			<div class="container">
+			    <h1>Docker-admin</h1>
+			    <br />
+				{{.LayoutContent}}
+			</div>
+		</header>
+	</body>
+</html>

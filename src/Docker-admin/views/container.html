@@ -1,0 +1,58 @@
+<div class="left-container">
+<h3>Containers</h3>
+	{{range $key, $val := .Hosts}}
+	<li class="group">
+		<a class=" item" href="/container/{{$key}}">
+		{{$key}}
+		</a>
+	</li>
+	<br />
+	{{end}}
+<br />
+</div>
+
+<div class="right-container">
+{{if eq .Hostname ""}}
+	<h3>Docker-admin: <a href="/container"> container </a></h3>
+{{else}}
+	{{if eq .Id ""}}
+			<h3>Docker-admin:  <a href="/container"> container </a> >> <a href="/container/{{.Hostname}}"> {{.Hostname}} </a></h3>
+			<h4>[ ## Container Up ## ]</h4>
+			<table>
+				<tr>
+				<td><h4>ID<h4></td>
+				<td><h4>Created<h4></td>
+				<td><h4>Image<h4></td>
+				<td><h4>Ports<h4></td>
+				<td><h4>Status<h4></td>
+				</tr>
+				{{range $key, $val := .Up}}
+				<tr>
+					<td><a href="/container/{{$.Hostname}}/{{substr $val.Id 0 12}}"> {{substr $val.Id 0 12}} </a></td>
+					<td>{{$val.Created}}</td>
+					<td>{{$val.Image}}</td>
+					<td>{{$val.Ports}}</td>
+					<td>{{$val.Status}}</td>
+				</tr>
+				{{end}}
+			</table>
+			<h4>[ ## Container Exited ## ]</h4>
+			<table>
+
+				{{range $key, $val := .Exited}}
+				<tr>
+					<td><a href="/container/{{$.Hostname}}/{{substr $val.Id 0 12}}"> {{substr $val.Id 0 12}} </a></td>
+					<td>{{$val.Created}}</td>
+					<td>{{$val.Image}}</td>
+					<td>{{$val.Ports}}</td>
+					<td>{{$val.Status}}</td>
+				</tr>
+				{{end}}
+			</table>
+	{{else}}
+		<h3>Docker-admin:  <a href="/container"> container </a> >> <a href="/container/{{.Hostname}}"> {{.Hostname}} </a> >> <a href="/container/{{.Hostname}}/{{.Id}}"> {{.Id}}</a></h3>
+		{{.inspectContainer}}
+	{{end}}
+{{end}}
+<br />
+</div>
